@@ -1,0 +1,19 @@
+<div class="container-fluid" *ngIf="enableMessages">
+  <div class="row pt-4 messages">
+    <div class="col-10 offset-1">
+      <p *ngFor="let message of messages">
+        <strong>{{message.sender}}</strong> {{message.dateTime | date:'hh:mm:ss'}}
+        <br />
+        {{message.text}}
+      </p>
+    </div>
+  </div>
+  <div class="row fixed-bottom pt-3 pb-4 mb-5">
+    <div class="col-8 offset-1">
+      <textarea #inputText class="form-control" (keyup.enter)="sendMessage(inputText)"> </textarea>
+    </div>
+    <div class="col-2">
+      <button type="button" class="btn btn-primary" (click)="sendMessage(inputText)">Enviar Mensagem</button>
+    </div>
+  </div>
+</div>
