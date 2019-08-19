@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  webSocketEndPoint: 'http://172.22.204.36:8080/web-socket'
+  webSocketEndPoint: 'http://localhost:5000/web-socket'
 };
 
 /*
