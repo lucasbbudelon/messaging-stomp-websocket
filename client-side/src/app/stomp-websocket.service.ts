@@ -25,6 +25,7 @@ export class StompWebsocketService {
 
     const webSocket = new SockJS(environment.webSocketEndPoint);
     this.stompClient = Stomp.over(webSocket);
+    this.stompClient.debug = null;
 
     this.stompClient.connect({},
       (success) => {
