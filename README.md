@@ -30,6 +30,7 @@ STOMP é o protocolo de mensagens orientadas por texto simples (ou streaming). E
 ## Links Úteis
 - [messaging-stomp-websocket](https://spring.io/guides/gs/messaging-stomp-websocket)
 - [stomp-spring-boot-websocket](https://www.toptal.com/java/stomp-spring-boot-websocket)
-
 - [stompjs](https://github.com/stomp-js/stompjs)
 - [rx-stomp](https://github.com/stomp-js/rx-stomp)
+- [stomp-websocket](http://jmesnil.net/stomp-websocket/doc)
+
