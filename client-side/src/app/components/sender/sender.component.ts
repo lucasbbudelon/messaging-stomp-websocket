@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { filter, tap } from 'rxjs/operators';
 import { StompWebsocketService } from 'src/app/stomp-websocket.service';
+import { ConnectionStatus } from 'src/app/app.model';
 
 @Component({
   selector: 'app-sender',
@@ -9,11 +10,18 @@ import { StompWebsocketService } from 'src/app/stomp-websocket.service';
 })
 export class SenderComponent implements OnInit {
 
-  public enableInput = true;
+  public enableInput: boolean;
 
   constructor(private stompWebsocketService: StompWebsocketService) { }
 
   ngOnInit() {
+    this.stompWebsocketService.connection
+      .pipe(
+        filter(value => Boolean(value)),
+        tap((value) => this.enableInput = value.status === ConnectionStatus.OPEN)
+      )
+      .subscribe();
+
     this.stompWebsocketService.senderName
       .pipe(
         filter(value => Boolean(value)),

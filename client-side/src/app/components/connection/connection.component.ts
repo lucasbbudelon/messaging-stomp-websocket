@@ -28,12 +28,12 @@ export class ConnectionComponent implements OnInit {
       .subscribe();
   }
 
-  get connectionTextClass() {
+  get bg() {
     switch (this.connection.status) {
-      case ConnectionStatus.OPEN: return 'text-success';
-      case ConnectionStatus.CLOSED: return 'text-warning';
-      case ConnectionStatus.FAILED: return 'text-danger';
-      default: return 'text-primary';
+      case ConnectionStatus.OPEN: return 'bg-success';
+      case ConnectionStatus.CLOSED: return 'bg-warning';
+      case ConnectionStatus.FAILED: return 'bg-danger';
+      default: return 'bg-primary';
     }
   }
 }

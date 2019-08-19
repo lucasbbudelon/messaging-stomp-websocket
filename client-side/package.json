@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "surge": "surge -p ./dist/client-side/ -d messaging-stomp-websocket.surge.sh",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -19,6 +20,7 @@
     "@angular/platform-browser": "~8.2.0",
     "@angular/platform-browser-dynamic": "~8.2.0",
     "@angular/router": "~8.2.0",
+    "@stomp/stompjs": "^5.4.2",
     "bootstrap": "^4.3.1",
     "net": "^1.0.2",
     "rxjs": "~6.4.0",
