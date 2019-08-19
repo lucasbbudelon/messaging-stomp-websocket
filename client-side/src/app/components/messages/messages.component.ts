@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { filter, tap } from 'rxjs/operators';
 import { StompWebsocketService } from 'src/app/stomp-websocket.service';
 import { Message } from '../../app.model';
@@ -10,8 +10,10 @@ import { Message } from '../../app.model';
 })
 export class MessagesComponent implements OnInit {
 
-  public enableMessages: boolean;
+  @ViewChild('containerMessages', { static: false }) private containerMessages: ElementRef;
+
   public messages: Message[];
+  public senderName: string;
 
   constructor(private stompWebsocketService: StompWebsocketService) {
     this.messages = [];
@@ -22,14 +24,17 @@ export class MessagesComponent implements OnInit {
     this.stompWebsocketService.senderName
       .pipe(
         filter(value => Boolean(value)),
-        tap(() => this.enableMessages = true)
+        tap(value => this.senderName = value)
       )
       .subscribe();
 
     this.stompWebsocketService.messageListener
       .pipe(
         filter(message => Boolean(message)),
-        tap(message => this.messages.push(message))
+        tap((message) => {
+          this.messages.push(message);
+          this.scrollDown();
+        })
       )
       .subscribe();
   }
@@ -38,5 +43,12 @@ export class MessagesComponent implements OnInit {
     this.stompWebsocketService.sendMessage(inputText.value);
     inputText.value = null;
     inputText.focus();
+  }
+
+  scrollDown() {
+    setTimeout(() => {
+      const container = this.containerMessages.nativeElement;
+      container.scrollTop = container.scrollHeight + container.scrollTop;
+    }, 0);
   }
 }

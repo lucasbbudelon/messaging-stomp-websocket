@@ -1,14 +1,14 @@
-<div class="container-fluid" *ngIf="enableInput">
+<div class="container" *ngIf="enableInput">
   <div class="row mt-4">
-    <div class="col-10 offset-1">
-        <p class="lead">Informe seu <strong>nome</strong> para ingressar no chat!</p>
+    <div class="col-10 offset-md-1">
+      <p class="lead">Informe seu <strong>nome</strong> para ingressar no chat!</p>
     </div>
   </div>
   <div class="row py-3">
-    <div class="col-sm-12 offset-1 col-md-7">
+    <div class="col-12 offset-md-1 col-md-7">
       <input #inputText autofocus type="text" class="form-control" (keyup.enter)="load(inputText)">
     </div>
-    <div class="col-sm-12 offset-sm-1 col-md-2">
+    <div class="col-12 col-md-2">
       <button type="button" class="btn btn-primary w-100" (click)="load(inputText)">
         Entrar no chat
       </button>

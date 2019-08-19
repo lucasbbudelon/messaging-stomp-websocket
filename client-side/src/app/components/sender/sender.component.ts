@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { filter, tap } from 'rxjs/operators';
-import { StompWebsocketService } from 'src/app/stomp-websocket.service';
 import { ConnectionStatus } from 'src/app/app.model';
+import { StompWebsocketService } from 'src/app/stomp-websocket.service';
 
 @Component({
   selector: 'app-sender',

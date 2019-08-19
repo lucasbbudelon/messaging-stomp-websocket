@@ -1,14 +1,22 @@
 <div class="container-fluid">
   <div class="row bg-light border-bottom">
-    <div class="col-10 offset-1 py-3">
-      <h1 class="text-uppercase">messaging stomp websocket</h1>
-      <p class="lead">
-        POC utilizando Java Spring Boot e Angular para validar uma aplicação interativa entre client-side e server-side
-        utilizando web socket.
-      </p>
+    <div class="col-12">
+      <app-header></app-header>
     </div>
   </div>
-  <app-messages></app-messages>
-  <app-sender></app-sender>
-  <app-connection></app-connection>
+  <div class="row my-3">
+    <div class="col-12">
+      <app-messages></app-messages>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <app-sender></app-sender>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <app-connection></app-connection>
+    </div>
+  </div>
 </div>

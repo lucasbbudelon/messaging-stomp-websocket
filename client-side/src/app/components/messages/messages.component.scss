@@ -1,4 +1,24 @@
-.messages {
-  height: 55vh;
+@import "~bootstrap/scss/bootstrap";
+
+.container-messages {
   overflow: auto;
+  height: 60vh;
+}
+
+$scrollbar-size: 0.3em;
+
+::-webkit-scrollbar {
+  width: $scrollbar-size;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px $secondary;
+  border-radius: $scrollbar-size;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $primary;
+  border-radius: $scrollbar-size;
 }

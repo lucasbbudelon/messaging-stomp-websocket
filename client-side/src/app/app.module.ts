@@ -8,13 +8,15 @@ import { StompWebsocketService } from './stomp-websocket.service';
 import { SenderComponent } from './components/sender/sender.component';
 import { MessagesComponent } from './components/messages/messages.component';
 import { ConnectionComponent } from './components/connection/connection.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SenderComponent,
     MessagesComponent,
-    ConnectionComponent
+    ConnectionComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
