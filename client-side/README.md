@@ -8,14 +8,8 @@ Este projeto foi gerado com [CLI Angular](https://github.com/angular/angular-cli
 ng serve --aot -o
 ```
 
-## Build
-
-```console
- ng build --prod --aot
-```
-
 ## Publish
 
 ```console
-surge -p ./dist/client-side/ -d messaging-stomp-websocket.surge.sh
+bash publish.sh
 ```
